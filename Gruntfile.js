@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         compile: {
             stylus: {
                 options: {
-                    import: ['input-mixin', 'utils', 'variables'],
+                    import: ['utils', 'variables'],
                     compress: false
                 },
                 files: {

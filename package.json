@@ -1,8 +1,8 @@
 {
-  "name": "textarea",
+  "name": "range-input",
   "version": "0.0.0",
-  "description": "TopCoat search input",
-  "main": "search-input.css",
+  "description": "TopCoat range input",
+  "main": "topcoat-range-input.css",
   "topcoat": {
     "controls": {
       "topcoat/utils": ""
@@ -19,12 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:topcoat/search-input.git"
+    "url": "git@github.com:topcoat/range-input.git"
   },
   "keywords": [
     "css",
     "topcoat",
-    "base",
+    "range",
+    "input",
     "adobe"
   ],
   "author": "@an_rei Andrei Oprea",
