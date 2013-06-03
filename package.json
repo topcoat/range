@@ -5,10 +5,10 @@
   "main": "topcoat-range-input.css",
   "topcoat": {
     "controls": {
-      "topcoat/utils": ""
+      "topcoat/range-input-base": ""
     },
     "utils": {
-      "topcoat/input-base": ""
+      "topcoat/utils": ""
     }
   },
   "directories": {
