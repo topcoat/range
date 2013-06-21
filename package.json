@@ -1,14 +1,14 @@
 {
   "name": "range-input",
   "version": "0.0.0",
-  "description": "TopCoat range input",
+  "description": "Topcoat range input",
   "main": "topcoat-range-input.css",
   "topcoat": {
     "controls": {
       "topcoat/utils": ""
     },
     "utils": {
-      "topcoat/input-base": ""
+      "topcoat/range-input-base": ""
     }
   },
   "directories": {
@@ -28,7 +28,7 @@
     "input",
     "adobe"
   ],
-  "author": "@an_rei Andrei Oprea",
+  "author": "@ndreio Andrei Oprea",
   "license": "Apache",
   "devDependencies": {
     "grunt-contrib-watch": "~0.3.1",
@@ -38,7 +38,7 @@
     "grunt-contrib-clean": "~0.4.1",
     "grunt-zip": "~0.7.0",
     "grunt-contrib-cssmin": "~0.6.0",
-    "grunt-topcoat": "0.0.5",
+    "grunt-topcoat": "*",
     "grunt-contrib-jade": "~0.5.0",
     "debug": "~0.7.2"
   }
