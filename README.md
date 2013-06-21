@@ -1,4 +1,4 @@
 range-input
 ===========
 
-TopCoat slider input
+Topcoat slider input
