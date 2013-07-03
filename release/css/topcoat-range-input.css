@@ -14,10 +14,10 @@ limitations under the License.
 */
 
 /*
-Topcoat range input
+Range input
 -------------------------
 
-	<input type='range' class='topcoat-range-input'>
+    <input type='range' class='topcoat-range-input'>
 
 */
 .topcoat-range-input {
