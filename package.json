@@ -8,7 +8,7 @@
       "topcoat/range-input-base": ""
     },
     "utils": {
-      "topcoat/range-input-base": ""
+      "topcoat/utils": ""
     }
   },
   "directories": {
