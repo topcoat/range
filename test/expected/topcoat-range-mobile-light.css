@@ -35,6 +35,12 @@ limitations under the License.
   cursor: pointer;
   -webkit-appearance: none;
 }
+.range:disabled,
+.topcoat-range:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
 /* topdoc
   name: Range
   description: Range input
@@ -70,6 +76,7 @@ limitations under the License.
 .topcoat-range::-webkit-slider-thumb {
   height: 3rem;
   width: 2rem;
+  background-color: #e5e9e8;
   border: 1px solid #a5a8a8;
   border-radius: 6px;
   box-shadow: inset 0 1px #fff;
@@ -77,6 +84,7 @@ limitations under the License.
 .topcoat-range::-moz-range-thumb {
   height: 3rem;
   width: 2rem;
+  background-color: #e5e9e8;
   border: 1px solid #a5a8a8;
   border-radius: 6px;
   box-shadow: inset 0 1px #fff;

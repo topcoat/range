@@ -51,6 +51,7 @@ limitations under the License.
   @extend .range__thumb--webkit
   height var-height
   width var-width--range__thumb
+  background-color var-background-color
   border var-border
   border-radius var-border-radius
   box-shadow var-box-shadow
@@ -59,6 +60,7 @@ limitations under the License.
   @extend .range__thumb
   height var-height
   width var-width--range__thumb
+  background-color var-background-color
   border var-border
   border-radius var-border-radius
   box-shadow var-box-shadow
@@ -66,4 +68,7 @@ limitations under the License.
 .topcoat-range:focus::webkit-slider-thumb
   border var-border--focus
   box-shadow var-box-shadow--focus
+
+.topcoat-range:disabled
+  @extend .range:disabled
 
