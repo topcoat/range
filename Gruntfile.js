@@ -1,20 +1,20 @@
 /**
-*
-* Copyright 2012 Adobe Systems Inc.;
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*
-*/
+ *
+ * Copyright 2012 Adobe Systems Inc.;
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 
 /*global module:false*/
 
@@ -28,17 +28,64 @@ module.exports = function(grunt) {
         },
 
         stylus: {
-            compile: {
-                options: {
-                    paths: ['node_modules/topcoat-range-input-base/src/mixins', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
-                    import: ['range-input-mixin', 'utils', 'theme-topcoat-mobile-light'],
-                    compress: false
-                },
+            options: {
+                paths: ['node_modules/topcoat-range-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                compress: false
+            },
 
+            mobilelight: {
+                options: {
+                  import: ['theme-topcoat-mobile-light']
+                },
                 files: [{
-                    src: 'src/topcoat-range-input.styl',
-                    dest: 'css/topcoat-range-input.css'
+                    src: 'src/topcoat-range.styl',
+                    dest: 'css/topcoat-range-mobile-light.css'
                 }]
+            },
+
+            mobiledark: {
+                options: {
+                  import: ['theme-topcoat-mobile-dark']
+                },
+                files: [{
+                    src: 'src/topcoat-range.styl',
+                    dest: 'css/topcoat-range-mobile-dark.css'
+                }]
+            },
+
+            desktoplight: {
+                options: {
+                  import: ['theme-topcoat-desktop-light']
+                },
+                files: [{
+                    src: 'src/topcoat-range.styl',
+                    dest: 'css/topcoat-range-desktop-light.css'
+                }]
+            },
+
+            desktopdark: {
+                options: {
+                  import: ['theme-topcoat-desktop-dark']
+                },
+                files: [{
+                    src: 'src/topcoat-range.styl',
+                    dest: 'css/topcoat-range-desktop-dark.css'
+                }]
+            }
+        },
+
+        topdoc: {
+            usageguides: {
+                options: {
+                    source: 'css',
+                    destination: "demo",
+                    template: "node_modules/topdoc-theme/",
+                    templateData: {
+                      "title": "Topcoat",
+                      "subtitle": "CSS for clean and fast web apps",
+                      "homeURL": "http://topcoat.io"
+                    }
+                }
             }
         },
 
@@ -48,45 +95,11 @@ module.exports = function(grunt) {
                 cwd: 'css',
                 src: ['*.css', '!*.min.css'],
                 dest: 'css',
-                ext: '.min.css',
-                options: {
-                    banner: grunt.file.read('src/copyright.styl').toString()
-                }
-            }
-        },
-
-        copy: {
-            release: {
-                files: [{
-                    expand: true,
-                    flatten: true,
-                    src: 'node_modules/topcoat-theme/img/light-grips.png',
-                    dest: 'img'
-                },
-                {
-                    expand: true,
-                    flatten: true,
-                    src: 'node_modules/topcoat-theme/font/**/*',
-                    dest: 'font'
-                }]
-            }
-        },
-
-        jade: {
-            compile: {
-                expand: true,
-                cwd: 'test/perf',
-                src: ['*.jade'],
-                dest: 'test/perf/',
-                ext: '.test.html'
+                ext: '.min.css'
             }
         },
 
         simplemocha: {
-            options: {
-                ui: 'bdd',
-                reporter: 'Nyan'
-            },
             all: {
                 src: ['test/*.test.js']
             }
@@ -101,17 +114,15 @@ module.exports = function(grunt) {
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
-    grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-topdoc');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
     grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
-    grunt.registerTask('build', ['stylus', 'jade']);
+    grunt.registerTask('build', ['stylus']);
     grunt.registerTask('test', ['simplemocha']);
-    grunt.registerTask('release', ['cssmin', 'copy']);
+    grunt.registerTask('release', ['topdoc', 'cssmin']);
 
 };
-
