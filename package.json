@@ -1,8 +1,7 @@
 {
-  "name": "topcoat-range-input",
+  "name": "topcoat-range",
   "version": "0.4.0",
-  "description": "Topcoat default range input skin",
-  "main": "index.html",
+  "description": "Topcoat default range skin",
   "directories": {
     "test": "test"
   },
@@ -12,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:topcoat/range-input.git"
+    "url": "git@github.com:topcoat/range.git"
   },
   "keywords": [
     "css",
@@ -21,21 +20,21 @@
     "input",
     "adobe"
   ],
-  "author": "@ndreio Andrei Oprea",
-  "license": "Apache",
+  "author": "@dam Kristofer Joseph",
+  "license": "Apache2",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-stylus": "~0.5.0",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-cssmin": "~0.6.0",
-    "grunt-contrib-jade": "~0.5.0",
     "grunt-simple-mocha": "~0.4.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-topdoc": "~0.1.3",
+    "topdoc-theme": "~0.2.7"
   },
   "dependencies": {
-    "topcoat-utils": "~0.1.0",
-    "topcoat-range-input-base": "~0.0.1",
-    "topcoat-theme": "~0.4.0"
+    "topcoat-utils": "~0.1.3",
+    "topcoat-range-base": "0.0.3",
+    "topcoat-theme": "~0.5.19"
   }
 }
