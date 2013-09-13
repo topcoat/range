@@ -65,7 +65,11 @@ limitations under the License.
   border-radius var-border-radius
   box-shadow var-box-shadow
 
-.topcoat-range:focus::webkit-slider-thumb
+.topcoat-range:focus::-webkit-slider-thumb
+  border var-border--focus
+  box-shadow var-box-shadow--focus
+
+.topcoat-range:focus::-moz-range-thumb
   border var-border--focus
   box-shadow var-box-shadow--focus
 
