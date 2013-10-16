@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
         stylus: {
             options: {
-                paths: ['node_modules/topcoat-range-base/src', 'node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-theme/src'],
+                paths: ['node_modules/topcoat-range-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
                 compress: false
             },
 
