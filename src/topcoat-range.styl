@@ -67,11 +67,19 @@ limitations under the License.
 
 .topcoat-range:focus::-webkit-slider-thumb
   border var-border--focus
-  box-shadow var-box-shadow--focus
+  box-shadow var-box-shadow--cta, var-box-shadow--focus
 
 .topcoat-range:focus::-moz-range-thumb
   border var-border--focus
-  box-shadow var-box-shadow--focus
+  box-shadow var-box-shadow--cta, var-box-shadow--focus
+
+.topcoat-range:active
+  &::-webkit-slider-thumb
+    border var-border
+    box-shadow var-box-shadow
+  &::-moz-range-thumb
+    border var-border
+    box-shadow var-box-shadow
 
 .topcoat-range:disabled
   @extend .range:disabled
