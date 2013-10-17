@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
         stylus: {
             options: {
-                paths: ['node_modules/topcoat-range-base/src', 'node_modules/topcoat-utils/src', 'node_modules/topcoat-theme/src'],
+                paths: grunt.file.expand('node_modules/topcoat-*/src'),
                 compress: false
             },
 
@@ -89,6 +89,25 @@ module.exports = function(grunt) {
             }
         },
 
+        autoprefixer: {
+            dist: {
+                options: {
+                    /*
+                     * Add target browsers here
+                     * https://github.com/ai/autoprefixer#browsers
+                     * browsers: ['android 4']
+                     */
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'css'
+                }]
+            }
+
+        },
+
         cssmin: {
             minify: {
                 expand: true,
@@ -118,10 +137,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-topdoc');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Default task.
     grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
-    grunt.registerTask('build', ['stylus']);
+    grunt.registerTask('build', ['stylus', 'autoprefixer']);
     grunt.registerTask('test', ['simplemocha']);
     grunt.registerTask('release', ['topdoc', 'cssmin']);
 

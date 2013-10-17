@@ -69,13 +69,15 @@
                 </div>
                 <div>
                   <h3>CSS</h3>
-                  <pre class="css"><code data-language="css">.topcoat-range {
+                  <pre class="css"><code data-language="css">
+.topcoat-range {
   border-radius: 4px;
   border: 1px solid #9daca9;
   background-color: #d6dcdb;
   height: 0.5rem;
   border-radius: 15px;
 }
+
 .topcoat-range::-moz-range-track {
   border-radius: 4px;
   border: 1px solid #9daca9;
@@ -83,14 +85,17 @@
   height: 0.5rem;
   border-radius: 15px;
 }
+
 .topcoat-range::-webkit-slider-thumb {
   height: 1.313rem;
   width: 0.75rem;
   background-color: #e5e9e8;
   border: 1px solid #9daca9;
   border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px #fff;
   box-shadow: inset 0 1px #fff;
 }
+
 .topcoat-range::-moz-range-thumb {
   height: 1.313rem;
   width: 0.75rem;
@@ -99,25 +104,28 @@
   border-radius: 4px;
   box-shadow: inset 0 1px #fff;
 }
+
 .topcoat-range:focus::-webkit-slider-thumb {
   border: 1px solid #0036ff;
+  -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
   box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
 }
+
 .topcoat-range:focus::-moz-range-thumb {
   border: 1px solid #0036ff;
   box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
 }
+
 .topcoat-range:active::-webkit-slider-thumb {
   border: 1px solid #9daca9;
-  background-color: #d2d6d6;
-  box-shadow: inset 0 1px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px #fff;
+  box-shadow: inset 0 1px #fff;
 }
+
 .topcoat-range:active::-moz-range-thumb {
   border: 1px solid #9daca9;
-  background-color: #d2d6d6;
-  box-shadow: inset 0 1px rgba(0,0,0,0.1);
-}
-</code></pre>
+  box-shadow: inset 0 1px #fff;
+}</code></pre>
                 </div>
               </section>
             </footer>
