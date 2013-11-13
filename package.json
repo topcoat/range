@@ -1,7 +1,9 @@
 {
   "name": "topcoat-range",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Topcoat default range skin",
+  "main": "index.html",
+  "style": "src/topcoat-range.css",
   "directories": {
     "test": "test"
   },
@@ -24,7 +26,6 @@
   "license": "Apache2",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-stylus": "~0.5.0",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-cssmin": "~0.6.0",
     "grunt-simple-mocha": "~0.4.0",
@@ -34,8 +35,8 @@
     "grunt-autoprefixer": "~0.3.1"
   },
   "dependencies": {
-    "topcoat-range-base": "0.0.3",
-    "topcoat-theme": "~0.6.2",
-    "topcoat-utils": "~0.2.0"
+    "topcoat-range-base": "git://github.com/topcoat/range-base.git#rework",
+    "topcoat-theme": "git://github.com/topcoat/theme.git#rework",
+    "topcoat-utils": "git://github.com/topcoat/utils.git#rework"
   }
 }
