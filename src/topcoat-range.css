@@ -79,11 +79,12 @@ limitations under the License.
   box-shadow: var(box-shadow--cta), var(box-shadow--focus);
 }
 
-.topcoat-range:active {
-  &::-webkit-slider-thumb
+.topcoat-range:active::-webkit-slider-thumb {
     border: var(border);
     box-shadow: var(box-shadow);
-  &::-moz-range-thumb
+}
+
+.topcoat-range:active::-moz-range-thumb {
     border: var(border);
     box-shadow: var(box-shadow);
 }
