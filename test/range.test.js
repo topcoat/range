@@ -25,24 +25,46 @@ describe('Topcoat range-input', function() {
     'use strict';
 
     it('should output correct mobile light css', function() {
-        var actual = grunt.file.read('css/topcoat-range-mobile-light.css');
-        var expected = grunt.file.read('test/expected/topcoat-range-mobile-light.css');
+        var actual = grunt.file.read('css/mobile-light.css');
+        var expected = grunt.file.read('test/expected/mobile-light.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
     it('mobile light stylesheet should not have any unrendered variables', function() {
-        var actual = grunt.file.read('css/topcoat-range-mobile-light.css');
+        var actual = grunt.file.read('css/mobile-light.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+
+    it('should output correct mobile light css', function() {
+        var actual = grunt.file.read('css/desktop-light.css');
+        var expected = grunt.file.read('test/expected/desktop-light.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('desktop light stylesheet should not have any unrendered variables', function() {
+        var actual = grunt.file.read('css/desktop-light.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 
     it('should output correct mobile dark css', function() {
-        var actual = grunt.file.read('css/topcoat-range-mobile-dark.css');
-        var expected = grunt.file.read('test/expected/topcoat-range-mobile-dark.css');
+        var actual = grunt.file.read('css/mobile-dark.css');
+        var expected = grunt.file.read('test/expected/mobile-dark.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
-    it('mobile dark stylesheet should not have any unrendered variables', function() {
-        var actual = grunt.file.read('css/topcoat-range-mobile-dark.css');
+    it('desktop dark stylesheet should not have any unrendered variables', function() {
+        var actual = grunt.file.read('css/mobile-dark.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+
+    it('should output correct desktop dark css', function() {
+        var actual = grunt.file.read('css/desktop-dark.css');
+        var expected = grunt.file.read('test/expected/desktop-dark.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('desktop dark stylesheet should not have any unrendered variables', function() {
+        var actual = grunt.file.read('css/desktop-dark.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 });
