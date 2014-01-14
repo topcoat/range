@@ -1,6 +1,6 @@
 {
   "name": "topcoat-range",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Topcoat default range skin",
   "main": "index.html",
   "style": "src/range.css",
