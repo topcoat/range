@@ -15,7 +15,6 @@
 * limitations under the License.
 *
 */
-
 @import "topcoat-range-base";
 /* topdoc
   name: Range
@@ -64,13 +63,28 @@
 }
 
 .range::-moz-range-thumb {
-  extend: %range__thumb;
+  extend: %range__thumb--moz;
   height: var(height);
   width: var(width--range__thumb);
   background-color: var(background-color);
   border: var(border);
   border-radius: var(border-radius);
   box-shadow: var(box-shadow);
+}
+
+.range::-ms-thumb {
+  extend: %range__thumb--ms;
+  height: var(height);
+  width: var(width--range__thumb);
+  background-color: var(background-color);
+  border: var(border);
+  border-radius: var(border-radius);
+  box-shadow: var(box-shadow);
+}
+
+.range::-ms-tooltip,
+.range::-ms-fill-lower {
+  display: none;
 }
 
 .range:focus::-webkit-slider-thumb {
@@ -89,6 +103,11 @@
 }
 
 .range:active::-moz-range-thumb {
+  border: var(border);
+  box-shadow: var(box-shadow);
+}
+
+input[type=range]:active::-ms-thumb {
   border: var(border);
   box-shadow: var(box-shadow);
 }

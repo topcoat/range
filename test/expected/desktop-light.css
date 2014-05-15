@@ -1,20 +1,3 @@
-/**
-*
-* Copyright 2012 Adobe Systems Inc.;
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*
-*/
 @font-face {
   font-family: "Source Sans Pro";
   src: url('../font/SourceSansPro-Regular.otf');
@@ -30,11 +13,6 @@
   font-family: "Source Sans Pro";
   src: url('../font/SourceSansPro-Semibold.otf');
   font-weight: 600;
-}
-
-body {
-  font: 12px "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
 }
 
 body {
@@ -78,9 +56,12 @@ body {
   -webkit-appearance: none;
 }
 
+.topcoat-range::-ms-thumb {
+  cursor: pointer;
+}
+
 .topcoat-range::-moz-range-thumb {
   cursor: pointer;
-  -webkit-appearance: none;
 }
 
 .topcoat-range::-webkit-slider-thumb {
@@ -141,6 +122,20 @@ body {
   box-shadow: inset 0 1px hsla(0, 100%, 100%, 1);
 }
 
+.topcoat-range::-ms-thumb {
+  height: 1.313rem;
+  width: 0.75rem;
+  background-color: hsla(165, 8%, 91%, 1);
+  border: 1px solid hsla(168, 8%, 65%, 1);
+  border-radius: 4px;
+  box-shadow: inset 0 1px hsla(0, 100%, 100%, 1);
+}
+
+.topcoat-range::-ms-tooltip,
+.topcoat-range::-ms-fill-lower {
+  display: none;
+}
+
 .topcoat-range:focus::-webkit-slider-thumb {
   border: 1px solid hsla(227, 100%, 50%, 1);
   box-shadow: inset 0 1px hsla(0, 100%, 100%, 0.36), 0 0 0 2px hsla(208, 82%, 69%, 1);
@@ -159,4 +154,9 @@ body {
 .topcoat-range:active::-moz-range-thumb {
   border: 1px solid hsla(168, 8%, 65%, 1);
   box-shadow: inset 0 1px hsla(0, 100%, 100%, 1);
+}
+
+input[type=range]:active::-ms-thumb {
+  border: 1px solid hsla(180, 1%, 20%, 1);
+  box-shadow: inset 0 1px hsla(0, 0%, 45%, 1);
 }
